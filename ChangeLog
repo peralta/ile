@@ -1,0 +1,146 @@
+2003-08-01 19:07  peralta
+
+	* ile.pl: version bump
+
+2003-08-01 19:01  peralta
+
+	* ile.xml, docs/README.html: Added nl translation
+
+2003-07-23 16:56  peralta
+
+	* ile.xml: Updated to latest changes
+
+2003-07-23 15:16  peralta
+
+	* docs/README.html: added news
+
+2003-07-23 15:10  peralta
+
+	* ile.pl, ile.xml: FR #2374 tested FR #2339 tested
+
+2003-07-23 10:05  peralta
+
+	* ile.pl: typo
+
+2003-07-22 17:11  peralta
+
+	* ile.pl, ile.xml: Support of webmail URL - FR #2339
+
+2003-07-22 15:46  peralta
+
+	* ile.pl: Typo
+
+2003-07-22 15:44  peralta
+
+	* ile.xml: Updated i18n messages
+
+2003-07-22 15:36  peralta
+
+	* docs/style.css: www CSS update
+
+2003-07-22 15:30  peralta
+
+	* ile.pl, ile.xml: First try at enhacing the config options from
+	the user side of things. This is for allowing/disallowing
+	notifications in XA/DND status.
+
+2003-02-26 23:18  peralta
+
+	* docs/README.html: news updates
+
+2003-02-26 22:56  peralta
+
+	* ile.pl: Version bump
+
+2003-02-26 22:54  peralta
+
+	* ile.pl: Do not allow people to subscribe if they haven't
+	registered with us
+
+2003-02-26 22:49  peralta
+
+	* ile.pl: x:expire support
+
+2003-02-26 13:34  peralta
+
+	* ile.pl: More intelligent presence handling (resource aware).
+	Closes #1308
+
+2003-01-23 22:35  peralta
+
+	* ile.pl: Fixed bug #1397: vcard support was broken Fixed bug
+	#1398: send "normal" instead of "headline" messages (some clients
+	didn't like it.
+
+2003-01-06 20:04  peralta
+
+	* ile.xml: Fixed typo.
+
+2003-01-06 20:02  peralta
+
+	* ile.pl: Removed debug prints
+
+2003-01-02 20:20  peralta
+
+	* ile.pl, docs/README.html, docs/style.css: More install
+	documentation. Commented a bit the code.
+
+2003-01-02 20:18  peralta
+
+	* docs/COPYING: Adding license.
+
+2003-01-01 23:42  peralta
+
+	* ile.pl: iq:browse is completely working. Thanks to edrin for
+	suggestions and beta-testing it.
+
+2003-01-01 20:59  peralta
+
+	* ile.pl: More support for browsing. I wonder if I'm the only one
+	using JEP 11 for everything related to agents, as I see a lot of
+	components using the <service>...</service> old style.
+
+2002-12-31 19:12  peralta
+
+	* ile.pl: Initial browse support. Should close bug #843
+
+2002-12-31 00:30  peralta
+
+	* ile.pl: solved little problem while checking if the Net::POP
+	login and apop methods where defined.
+
+2002-12-30 23:36  peralta
+
+	* ile.xml: Catalan two letter id is "ca" and not "ct".	Added
+	romanian translation, thanks to Adrian Rapa.
+
+2002-12-30 00:36  peralta
+
+	* ile.pl: Sending probes on connect and unavailables on
+	disconnects. This closes bugs #841 and #842.
+
+2002-12-29 23:15  peralta
+
+	* ile.pl: Net::POP3 and IMAP::Simple could be undefined
+
+2002-12-29 00:03  peralta
+
+	* ile.pl, ile.xml: Debug options in config file. FR #452
+
+2002-12-29 00:01  peralta
+
+	* docs/README.html: Documentation updates.
+
+2002-12-23 00:56  peralta
+
+	* docs/README.html: We now have a logo.  Created "About" section. 
+	License is GPL v2.
+
+2002-12-22 23:54  peralta
+
+	* ile.pl, ile.xml, docs/README.html: Initial revision
+
+2002-12-22 23:54  peralta
+
+	* ile.pl, ile.xml, docs/README.html: Initial import
+

@@ -1,0 +1,130 @@
+<config>
+  <jabber>
+     <server>myhost.com</server> <!-- your jabber server -->
+     <port>31515</port> <!-- the port the jabber server is waiting for us -->
+     <secret>hallo</secret> <!-- the shared secret -->
+     <service>ile.myhost.com</service> <!-- our name -->
+     <connectsleep>5</connectsleep> <!-- seconds to wait if we get disconnected -->
+     <language>en</language> <!-- language of the messages -->
+     <vCard>
+         <FN>I Love Email</FN>
+         <DESC>An email notifier component</DESC>
+         <URL>http://ile.jabberstudio.org</URL>
+     </vCard>
+  </jabber>
+
+  <debug>
+    <file>ile.log</file>
+    <level>1</level> <!-- man Net::Jabber::Debug -->
+  </debug>
+
+  <mail>
+    <checkinterval>10</checkinterval> <!-- Email check interval, in minutes -->
+    <timeout>20</timeout> <!-- timeout for IMAP/POP connection, in seconds -->
+  </mail>
+
+  <files> <!-- where to put the data -->
+    <users>users.db</users>
+    <passwords>passwords.db</passwords>
+    <hosts>hosts.db</hosts>
+    <types>types.db</types>
+    <notifyxa>notifyxa.db</notifyxa>
+    <notifydnd>notifydnd.db</notifydnd>
+    <urls>urls.db</urls>
+  </files>
+
+  <form> <!-- messages sent to the user -->
+    <en>
+      <instructions>Please fill in the fields,according to your email account settings and notification preferences</instructions>
+      <title>ILE: Email notification service</title>
+      <email_options>Email account settings</email_options>
+      <user>Username</user>
+      <pass>Password</pass>
+      <host>Hostname</host>
+      <type>Type</type>
+      <newmail>You have received NUM email messages since last time I checked, which was CHECKINTERVAL minutes ago.</newmail>
+      <errorcheck>There was an error while trying to check mail for ACCOUNT.</errorcheck>
+      <notify_options>Notification Options</notify_options>
+      <notifyxa>Notify even when Xtended Away (XA)</notifyxa>
+      <notifydnd>Notify even when Do Not Disturb (DND)</notifydnd>
+      <webmail_url>Webmail URL</webmail_url>
+      <webmail_login>Login to ACCOUNT</webmail_login>
+      <iledesc>ILE: an email notifier component: http://ile.jabberstudio.org</iledesc>
+    </en>
+
+    <es>
+      <instructions>Por favor, rellene los campos del formulario.</instructions>
+      <title>ILE: Servicio de notificación de correo</title>
+      <email_options>Configuración de la cuenta de correo</email_options>
+      <user>Usuario</user>
+      <pass>Clave</pass>
+      <host>Host</host>
+      <type>Tipo</type>
+      <newmail>Ha recibido NUM email(s) desde la última comprobación que fue hace CHECKINTERVAL minutos</newmail>
+      <errorcheck>Ha habido un error en la comprobación del correo para la cuenta ACCOUNT.</errorcheck>
+      <notify_options>Opciones de notificación</notify_options>
+      <notifyxa>Notificar incluso si muy ausente (XA)</notifyxa>
+      <notifydnd>Notificar incluso si no molestar (DND)</notifydnd>
+      <webmail_url>Webmail URL</webmail_url>
+      <webmail_login>Leer correo de ACCOUNT</webmail_login>
+      <iledesc>ILE: un notificador de nuevo email - http://ile.jabberstudio.org</iledesc>
+    </es>
+
+    <ca>
+      <instructions>Ompli els camps del formulari.</instructions>
+      <title>ILE: Servei de notificació de nou email</title>
+      <email_options>Dades del compte de mail</email_options>
+      <user>Usuari</user>
+      <pass>Clau</pass>
+      <host>Host</host>
+      <type>Tipus</type>
+      <newmail>Ha rebut NUM email(s) des de la última comprobació que va ser fa CHECKINTERVAL minuts.</newmail>
+      <errorcheck>S'ha produit un error en la comprobació del correu per al compte ACCOUNT.</errorcheck>
+      <notify_options>Opcions de notificació</notify_options>
+      <notifyxa>Notificar si molt absent (XA)</notifyxa>
+      <notifydnd>Notificar si no molestar (DND)</notifydnd>
+      <webmail_url>Webmail URL</webmail_url>
+      <webmail_login>Llegir correu de ACCOUNT</webmail_login>
+      <iledesc>ILE: un notificador de nou email - http://ile.jabberstudio.org</iledesc>
+    </ca>
+
+    <ro>
+      <!-- Contributed by Adrian Rappa -->
+      <instructions>Va rog completati urmatoarele campuri</instructions>
+      <title>I Love Email: new email notification service</title>
+      <email_options>Email account settings</email_options>
+      <user>Nume utilizator</user>
+      <pass>Parola</pass>
+      <host>Nume gazda</host>
+      <type>Tip</type>
+      <newmail>Ati primit NUM mesaj(e) de la ultima verificare, care a fost acum CHECKINTERVAL minute.</newmail>
+      <errorcheck>A fost eroare in timp ce incercam sa verific posta pentru ACCOUNT.</errorcheck>
+      <notify_options>Notification Options</notify_options>
+      <notifyxa>Notify even when Xtended Away (XA)</notifyxa>
+      <notifydnd>Notify even when Do Not Disturb (DND)</notifydnd>
+      <webmail_url>Webmail URL</webmail_url>
+      <webmail_login>Login to ACCOUNT</webmail_login>
+      <iledesc>ILE: an email notifier component: http://ile.jabberstudio.org</iledesc>
+    </ro>
+
+    <nl>
+      <!-- Contributed by Sander Devrieze -->
+      <instructions>Vul a.u.b. volgende velden in overeenkomstig met uw e-mail  account instellingen en notificatie voorkeuren.</instructions>
+      <title>ILE: dienst voor E-mail notificatie</title>
+      <email_options>E-mail account instellingen</email_options>
+      <user>Gebruikersnaam</user>
+      <pass>Wachtwoord</pass>
+      <host>Naam mailserver</host>
+      <type>Soort</type>
+      <newmail>U hebt NUM e-mails ontvangen sinds CHECKINTERVAL minuten geleden.</newmail>
+      <errorcheck>Fout tijdens controle op nieuwe e-mails op                    ACCOUNT.</errorcheck>
+      <notify_options>Notificatie Instellingen</notify_options>
+      <notifyxa>Notificeer ook in Niet Beschikbaar status (XA)</notifyxa>             <notifydnd>Notificeer ook in Niet Storen status (DND)</notifydnd>
+      <webmail_url>Webmail URL</webmail_url>
+      <webmail_login>Log in op ACCOUNT</webmail_login>
+      <iledesc>ILE: een e-mail notificatie onderdeel: http://ile.jabberstudio.org</iledesc>
+    </nl>
+
+  </form>
+
+</config>

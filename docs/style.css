@@ -1,0 +1,63 @@
+body {
+  font-family: Verdana, Lucida, helvetica, arial; 
+  font-size: small;
+  background-color: white;
+  color: #000;
+} 
+
+.programlisting {
+  padding-top: 10em;
+  padding-left: 8em;
+  background-color: #ffffe0;
+}
+
+.screen {
+  background-color: #ffffc0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:active {
+  color: #0088bb;
+}
+
+a:visited {
+  color: #0077aa;
+}
+
+a:active {
+  color: #09f;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #dd9900;
+}
+
+
+H1.title  {
+  padding: 6em;
+  border-style: solid;
+  border-width: 2em;
+  border-color: #eeeeee;
+}
+
+H3.title  {
+        border: 1px #990000 solid;
+        width: 100%; 
+        background: #ffead3;
+        font-family: verdana;
+        font-size: 16px;
+        font-weight: bold;
+}
+
+TR.answer {
+        font-size: 12px;
+	text-align: justify;
+}
+
+DIV.revhistory {
+  width: 400px;
+}

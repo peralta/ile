@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <title>ILE - An Email notifier component for jabber</title>
+ <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<h1 align="center">ILE - An Email notifier component for jabber</h1>
+
+<center><img src="http://ile.jabberstudio.org/ilelogo.png" alt="ILE"></center>
+
+<h4 align="center">
+<a href="#news">News</a> || <a href="#intro">Introduction</a> || <a href="#dl">Getting it</a> || <a href="#install">Installation</a> || <a href="#using">Using it</a> || <a href="#about">About</a>
+</h4>
+<h2 align="left"><a name="news">News</a></h2>
+<ul>
+ <li>1 Aug 2003. ILE v0.4 released!</li>
+ <li>23 Jul 2003. New features in CVS: allow to specify a webmail url and disallow notifications when XA or DND. Please test.</li>
+ <li>26 Feb 2003. ILE v0.3 released! Please see the <a href="http://www.jabberstudio.org/projects/ile/releases/view.php?id=138">v0.3 ChangeLog</a></li>
+ <li>6 Jan 2003. ILE v0.2 released! Please see the <a href="http://www.jabberstudio.org/projects/ile/releases/view.php?id=92">v0.2 ChangeLog</a>.</li>
+ <li>2 Jan 2003. Lots of bugfixes and enhacements in the road. Happy new year!</li>
+ <li>29 Dec 2002. Documentation updates.</li>
+ <li>23 Dec 2002. We now have a logo.</li>
+ <li>22 Dec 2002. Project page created. First public release.</li>
+</ul>
+
+<h2 align="left"><a name="intro">Introduction</a></h2>
+<p>
+ILE is an acronym for <i>I Love Email</i>, which is just an indicator
+of how good I am for choosing project names. The purpose of the component
+is to notify you when new email has arrived to your account, which you
+can configure when you register with ILE. You can test a running version
+registering to <b>ile.mi.uji.es</b>.
+</p>
+
+<p>
+The current set of features, as of version <b>0.4</b>, include:
+</p>
+<ul>
+  <li>Check email from POP or IMAP email accounts, configurable at the client side.</li>
+  <li>Disallow notification when in Extended Away or DND status.</li>
+  <li>Configurable email checking periods, at the server side.</li>
+  <li>i18n support, configurable at the server side. (en, es, ca, ro, nl)</li>
+  <li>Allow to specify a webmail URL so that notifications can point your browser to the webmail gateway.</li>
+</ul>
+
+<p>
+A similar component exists in the <a href="http://jabberpy.sourceforge.net/">jabberpy</a> distribution. ILE was developed using the perl <a href="http://www.jabberstudio.org/projects/netjabber">Net::Jabber</a> modules, which I'm more used to.
+</p>
+
+<p>
+Who would like to use this? Well, that is a good question. If you find it
+useful and use it, you will probably miss something, so please <a href="http://www.jabberstudio.org/projects/ile/bugs/">report bugs</a> or <a href="http://www.jabberstudio.org/projects/ile/features/">suggest feature requests</a>.
+</p>
+
+<p>
+Where I think it fits pretty well is in Intranet Jabber deployment. <b>Security warning:</b> Be
+careful when using this. Your password will travel in clear from your client to your jabber
+server if you don't use SSL and it will probably travel in clear from the jabber server to
+your email server. Use with care. This shouldn't be an issue in your Intranet, but it is
+if you use an ILE installed in a foreign jabber server.
+</p>
+
+<p>
+ILE is distributed under GPL v2 license.
+</p>
+
+<h2 align="left"><a name="dl">Getting it</a></h2>
+
+<p>
+You can download ILE going to the <a href="http://www.jabberstudio.org/projects/ile/releases/">Files</a> section in its <a href="http://www.jabberstudio.org/projects/ile/project/view.php">project page</a>. If you want to mess with latest, greatest and most buggy code, you can grab it from CVS as explained in <a href="http://www.jabberstudio.org/cvs.html">JabberStudio CVS instructions</a> page.
+</p>
+
+<h2 align="left"><a name="install">Installation</a></h2>
+
+<p>
+If you have installed any kind of component before, it should be straight
+forward. Let's take a look at the necessary steps:
+</p>
+<ol>
+  <li>Edit the <tt>&lt;browse&gt;</tt> section of your jabber server's configuration file:
+<pre class="screen">
+&lt;headline type="notice" jid="ile.myhost.com" name="ILE"&gt;
+        &lt;ns&gt;jabber:iq:register&lt;/ns&gt;
+&lt;/headline&gt;
+</pre>
+<p>
+If your clients support browsing and not just agent querying, as specified in <a href="http://www.jabber.org/jeps/jep-0011.html">JEP-11</a>, you can write the above three lines like this:
+</p>
+<pre class="screen">
+&lt;item type="notice" category="headline" name="ILE" jid="ile.myhost.com"&gt;
+        &lt;ns&gt;jabber:iq:register&lt;/ns&gt;
+&lt;/item&gt;
+</pre>
+  </li>
+  <li>And then add a &lt;service&gt; section:
+<pre class="screen">
+&lt;service id="ile"&gt;
+        &lt;host&gt;ile.myhost.com&lt;/host&gt;
+        &lt;accept&gt;
+                &lt;ip&gt;127.0.0.1&lt;/ip&gt;
+                &lt;port&gt;31515&lt;/port&gt;
+                &lt;secret&gt;hallo&lt;/secret&gt;
+        &lt;/accept&gt;
+&lt;/service&gt;
+</pre>
+  </li>
+
+  <li>Next step is to edit <tt>ile.xml</tt> file, it is well documented and you should have no problems with it.
+  </li>
+</ol>
+
+<p><b>Note:</b> ILE has quite a few dependencies on external perl modules that you, very probably, will not have installed. If you are familiar with CPAN, it should not be an issue. If you are not, here are a simple set of commands to get the modules installed:
+</p>
+<pre class="screen">
+# perl -MCPAN -e'install Net::Jabber'
+# perl -MCPAN -e'install Net::POP3'
+# perl -MCPAN -e'install XML::Simple'
+# perl -MCPAN -e'install Net::IMAP::Simple'
+</pre>
+
+<h2 align="left"><a name="using">Using it</a></h2>
+
+<p>Once the component is running, you can register with it. It will ask you for the email account details. After that, once the component has got the chance to verify the number of emails in your INBOX, it will send you a headline message when new mail arrives there.
+</p>
+<p>
+To unregister with it you just have to unsubscribe from its presence.
+</p>
+
+<h2 align="left"><a name="about">About</a></h2>
+
+<p>ILE was written by <a href="http://spisa.act.uji.es/~peralta">Luis Peralta</a>. You can take a look at my <a href="http://www.jabberstudio.org/user/view.php?uid=629">JabberStudio user page</a> or my <a href="http://www.aditel.org/socios/perfiles/peralta">Aditel user page</a>.
+</p>
+
+<p>I would like to thank <a href="http://www.aditel.org/socios/perfiles/emolina">Emilio J. Molina</a> for the logo.</p>
+
+</body>
+</html>
